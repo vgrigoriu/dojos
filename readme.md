@@ -1,0 +1,1 @@
+# Various coding dojo ideas
