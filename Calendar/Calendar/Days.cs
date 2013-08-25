@@ -7,7 +7,13 @@ namespace Calendar
     {
         public static IEnumerable<DateTime> InYear(int year)
         {
-            yield return new DateTime(year, 1, 1);
+            var day = new DateTime(year, 1, 1);
+
+            while (day.Year == year)
+            {
+                yield return day;
+                day = day.AddDays(1);
+            }
         }
     }
 }

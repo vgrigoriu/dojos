@@ -16,5 +16,13 @@ namespace Calendar.Tests
 
             firstDay.Should().Be(new DateTime(2013, 1, 1));
         }
+
+        [Fact]
+        public void DaysEnumeratorReturnsAllTheDaysInYear()
+        {
+            var daysInYear = Days.InYear(2013);
+
+            daysInYear.Count().Should().Be(365);
+        }
     }
 }
