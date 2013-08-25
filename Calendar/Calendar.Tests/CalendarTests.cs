@@ -24,5 +24,15 @@ namespace Calendar.Tests
 
             daysInYear.Count().Should().Be(365);
         }
+
+        [Fact]
+        public void DaysAreSplitIntoMonths()
+        {
+            var daysInYear = Days.InYear(2013);
+            var daysByMonth = Days.ByMonth(daysInYear).ToList();
+
+            daysByMonth.Count().Should().Be(12);
+            daysByMonth.First().Count().Should().Be(31);
+        }
     }
 }

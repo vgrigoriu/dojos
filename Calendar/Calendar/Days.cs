@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Calendar
 {
@@ -14,6 +15,11 @@ namespace Calendar
                 yield return day;
                 day = day.AddDays(1);
             }
+        }
+
+        public static IEnumerable<IGrouping<int, DateTime>> ByMonth(IEnumerable<DateTime> days)
+        {
+            return days.GroupBy(day => day.Month);
         }
     }
 }
